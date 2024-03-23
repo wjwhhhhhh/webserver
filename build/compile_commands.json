@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/root/webserver/build",
+  "command": "/usr/bin/c++  -isystem /foo/bar -g -std=gnu++11 -o CMakeFiles/webserver.dir/main.cpp.o -c /root/webserver/main.cpp",
+  "file": "/root/webserver/main.cpp"
+},
+{
+  "directory": "/root/webserver/build",
+  "command": "/usr/bin/c++  -isystem /foo/bar -g -std=gnu++11 -o CMakeFiles/webserver.dir/buffer/buffer.cpp.o -c /root/webserver/buffer/buffer.cpp",
+  "file": "/root/webserver/buffer/buffer.cpp"
+},
+{
+  "directory": "/root/webserver/build",
+  "command": "/usr/bin/c++  -isystem /foo/bar -g -std=gnu++11 -o CMakeFiles/webserver.dir/log/log.cpp.o -c /root/webserver/log/log.cpp",
+  "file": "/root/webserver/log/log.cpp"
+},
+{
+  "directory": "/root/webserver/build",
+  "command": "/usr/bin/c++  -isystem /foo/bar -g -std=gnu++11 -o CMakeFiles/webserver.dir/http/json.cpp.o -c /root/webserver/http/json.cpp",
+  "file": "/root/webserver/http/json.cpp"
+},
+{
+  "directory": "/root/webserver/build",
+  "command": "/usr/bin/c++  -isystem /foo/bar -g -std=gnu++11 -o CMakeFiles/webserver.dir/http/writer.cpp.o -c /root/webserver/http/writer.cpp",
+  "file": "/root/webserver/http/writer.cpp"
+},
+{
+  "directory": "/root/webserver/build",
+  "command": "/usr/bin/c++  -isystem /foo/bar -g -std=gnu++11 -o CMakeFiles/webserver.dir/socket/socket.cpp.o -c /root/webserver/socket/socket.cpp",
+  "file": "/root/webserver/socket/socket.cpp"
+},
+{
+  "directory": "/root/webserver/build",
+  "command": "/usr/bin/c++  -isystem /foo/bar -g -std=gnu++11 -o CMakeFiles/webserver.dir/timer/heaptimer.cpp.o -c /root/webserver/timer/heaptimer.cpp",
+  "file": "/root/webserver/timer/heaptimer.cpp"
+},
+{
+  "directory": "/root/webserver/build",
+  "command": "/usr/bin/c++  -isystem /foo/bar -g -std=gnu++11 -o CMakeFiles/webserver.dir/epoll/epoll.cpp.o -c /root/webserver/epoll/epoll.cpp",
+  "file": "/root/webserver/epoll/epoll.cpp"
+}
+]

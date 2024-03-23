@@ -1,0 +1,49 @@
+INFO /root/webserver/main.cpp 12 Thu Mar 21 15:21:21 2024 收到了
+GET / HTTP/1.1
+Host: 47.92.134.176:1316
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT
+INFO /root/webserver/main.cpp 15 Thu Mar 21 15:21:21 2024 连接关闭
+INFO /root/webserver/main.cpp 12 Thu Mar 21 15:21:21 2024 收到了
+GET /favicon.ico HTTP/1.1
+Host: 47.92.134.176:1316
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.3
+INFO /root/webserver/main.cpp 15 Thu Mar 21 15:21:21 2024 连接关闭
+INFO /root/webserver/main.cpp 12 Thu Mar 21 15:21:56 2024 收到了
+GET / HTTP/1.1
+Host: 47.92.134.176:1316
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT
+INFO /root/webserver/main.cpp 15 Thu Mar 21 15:21:56 2024 连接关闭
+INFO /root/webserver/main.cpp 12 Thu Mar 21 15:21:56 2024 收到了
+GET / HTTP/1.1
+Host: 47.92.134.176:1316
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122
+INFO /root/webserver/main.cpp 15 Thu Mar 21 15:21:56 2024 连接关闭
+INFO /root/webserver/main.cpp 12 Thu Mar 21 15:21:57 2024 收到了
+GET /favicon.ico HTTP/1.1
+Host: 47.92.134.176:1316
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.3
+INFO /root/webserver/main.cpp 15 Thu Mar 21 15:21:57 2024 连接关闭
+INFO /root/webserver/main.cpp 12 Thu Mar 21 15:22:00 2024 收到了
+GET / HTTP/1.1
+Host: 47.92.134.176:1316
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT
+INFO /root/webserver/main.cpp 15 Thu Mar 21 15:22:00 2024 连接关闭
+INFO /root/webserver/main.cpp 12 Thu Mar 21 15:22:00 2024 收到了
+GET /favicon.ico HTTP/1.1
+Host: 47.92.134.176:1316
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.3
+INFO /root/webserver/main.cpp 15 Thu Mar 21 15:22:00 2024 连接关闭

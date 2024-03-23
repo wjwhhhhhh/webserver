@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "ostream": "cpp",
+        "condition_variable": "cpp",
+        "iostream": "cpp",
+        "cmath": "cpp",
+        "random": "cpp",
+        "string": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
+    },
+    "editor.formatOnSave": false
+}
