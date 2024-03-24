@@ -26,10 +26,10 @@ void WebServer::Log::log::Write(int level, const char *name, int line, const cha
         buffer.append(" ");
         buffer.append(log::GetTime());
         buffer.append(" ");
-        char temp[210];
+        char temp[1024];
         va_list args;
         va_start(args, format);
-        int m = vsnprintf(temp, 210, format, args); //
+        int m = vsnprintf(temp, 1024, format, args); //
         va_end(args);
         buffer.append(temp);
         te = buffer.GetString();

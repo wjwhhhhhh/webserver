@@ -4,9 +4,6 @@ myepoll::myepoll(int size)
 {
     epollfd_=epoll_create(size);
 }
-myepoll::~myepoll() {
-    close(epollfd_);
-}
 
 bool myepoll::AddFd(int fd, uint32_t events) {
     if(fd < 0) return false;

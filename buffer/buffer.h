@@ -7,7 +7,7 @@
 #include <atomic>
 #include <sstream>
 #include <string>
-#include <vector>
+#include <queue>
 
 namespace WebServer
 {
@@ -23,9 +23,17 @@ class Buffer
     void append(std::string &val);
     void append(std::string &&val);
     std::string GetString();
-
+    char& Get();
+    void Peek();
+    bool empty();
+    void clear()
+    {
+      buffer_.clear();
+    }
+    size_t size();
+    char& operator[](int x);
   private:
-    std::vector<char> buffer_;
+    std::deque<char> buffer_;
 };
 } // namespace Buffer
 } // namespace WebServer

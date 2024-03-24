@@ -10,6 +10,7 @@
 #include <sstream>
 #include <vector>
 #include <functional>
+#include <algorithm>
 using namespace Eula::json;
 using namespace std;
 Json::Json():m_type(json_null)
@@ -354,7 +355,7 @@ Json Eula::json::parse_number(const std::string &value,int &id)
         else if(value[id]=='+'||value[id]=='e'||value[id]=='.'||value[id]=='-'||is_num(value[id]))tem+=value[id++];
         else exit(2);
     }
-    if(count(tem.begin(),tem.end(),'.')||count(tem.begin(),tem.end(),'e'))
+    if(std::count(tem.begin(),tem.end(),'.')||std::count(tem.begin(),tem.end(),'e'))
     {
         return Json(static_cast<double>(stold(tem)));
     }

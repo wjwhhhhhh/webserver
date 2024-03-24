@@ -9,6 +9,7 @@
 std::string ip = "0.0.0.0";
 int port = 1316;
 int backprintf = 1024;
+using namespace std;
 int main()
 {
     int sockfd = socket(PF_INET, SOCK_STREAM, 0);
@@ -29,11 +30,13 @@ int main()
         printf("fail to open socket,%s", strerror(errno));
     }
 
-    std::string data = "hello world";
-    ::send(sockfd, data.c_str(), data.size(), 0);
-
+    std::string data = "GET /index.html HTTP/1.1\r\nHost: www.example.com\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.9\r\nConnection:keep-alive\r\n\r\n";
+    cout<<data.size()<<endl;
+    int si=::send(sockfd, data.data(), data.size(), 0);
+    cout<<si<<endl;
     char buf[1024] = {0};
     ::recv(sockfd, buf, sizeof buf, 0);
     printf("%s", buf);
     ::close(sockfd);
+    cout<<"jieshu"<<endl;
 }
