@@ -65,6 +65,7 @@ void HeapTimer::doWork(int id) {
     if(heap_.empty() || ref_.count(id) == 0) {
         return;
     }
+    std::lock_guard<std::mutex> a(mut_);
     size_t i = ref_[id];
     TimerNode node = heap_[i];
     node.cb();
@@ -91,6 +92,7 @@ void HeapTimer::del_(size_t index) {
 
 void HeapTimer::adjust(int id, int timeout) {
     /* 调整指定id的结点 */
+        std::lock_guard<std::mutex> a(mut_);
     assert(!heap_.empty() && ref_.count(id) > 0);
     heap_[ref_[id]].expires = Clock::now() + MS(timeout);;
     siftdown_(ref_[id], heap_.size());
@@ -106,6 +108,7 @@ void HeapTimer::tick() {
         if(std::chrono::duration_cast<MS>(node.expires - Clock::now()).count() > 0) { 
             break; 
         }
+            std::lock_guard<std::mutex> a(mut_);
         node.cb();
         pop();
     }

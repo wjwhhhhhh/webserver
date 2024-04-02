@@ -1,6 +1,7 @@
 #ifndef HTTP_RESPONSE_H
 #define HTTP_RESPONSE_H
 #include<string>
+#include<unordered_map>
 using std::string;
 namespace WebServer::HTTP
 {
@@ -18,9 +19,11 @@ namespace WebServer::HTTP
         string GetType();
         string work();
         string error_html();
+        static const std::unordered_map<std::string, std::string>SUFFIX_TYPE;
         private:
         string type_;
         string body_;
+
     };
 };
 #endif 

@@ -5,6 +5,7 @@ using namespace std;
 using namespace WebServer::HTTP;
 using namespace WebServer::Buffer;
 
+
 const unordered_set<string> httprequest::DEFAULT_HTML{
     "/index", "/register", "/login", "/welcome", "/video", "/picture",
 };
@@ -19,6 +20,10 @@ void httprequest::init()
     method_ = path_ = version_ = body_ = "";
     state_ = REQUEST_LINE;
     header_.clear();
+}
+void httprequest::clear()
+{
+    init();
 }
 bool httprequest::parse(WebServer::Buffer::Buffer &bur)
 {
@@ -58,7 +63,7 @@ bool httprequest::parse(WebServer::Buffer::Buffer &bur)
     if (state_ == FINISH)
     {
 
-        if (method_ == "Post" && header_.find("Content-Length") != header_.end())
+        if (method_ == "POST" && header_.find("Content-Length") != header_.end())
         {
             body_ = line.substr(0, stoi(header_["Content-Length"]));
         }

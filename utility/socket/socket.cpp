@@ -85,6 +85,7 @@ size_t mysocket::send(const string & val)
 }
 void mysocket::close()
 {
+    LOG_INFO("socket号%d 已经被关闭了", sockfd_);
     ::close(sockfd_);
 }
 

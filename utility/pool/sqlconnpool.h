@@ -10,7 +10,7 @@
 #include <thread>
 #include "../log/log.h"
 
-namespace Webserver::SQL
+namespace WebServer::SQL
 {
 class SqlConnPool {
 public:

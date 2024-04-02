@@ -1,10 +1,11 @@
 #ifndef HTTP_CONN_H
 #define HTTP_CONN_H
-#include "../socket/socket.h"
+#include <unordered_map>
+#include "../utility/socket/socket.h"
 #include "./httprequest.h"
 #include "./httpresponse.h"
-#include "../buffer/buffer.h"
-#include "../log/log.h"
+#include "../utility/buffer/buffer.h"
+#include "../utility/log/log.h"
 namespace WebServer::HTTP
 {
     class httpconn: public WebServer::Socket::mysocket

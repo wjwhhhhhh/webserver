@@ -1,5 +1,5 @@
 #include "./sqlconnpool.h"
-using namespace Webserver::SQL;
+using namespace WebServer::SQL;
 using std::lock_guard;
 using std::mutex;
 SqlConnPool::SqlConnPool() {
@@ -31,6 +31,7 @@ void SqlConnPool::Init(const char* host, int port,
         }
         connQue_.push(sql);
     }
+    LOG_INFO("MySql Connect SUCCESS!");
     MAX_CONN_ = connSize;
     sem_init(&semId_, 0, MAX_CONN_);
 }

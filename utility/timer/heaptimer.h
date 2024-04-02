@@ -14,6 +14,7 @@
 #include <functional> 
 #include <assert.h> 
 #include <chrono>
+#include <mutex>
 #include "../log/log.h"
 namespace WebServer::time
 {
@@ -32,7 +33,7 @@ struct TimerNode {
 };
 class HeapTimer {
 public:
-    HeapTimer() { heap_.reserve(64); }
+    HeapTimer() {}
 
     ~HeapTimer() { clear(); }
     
@@ -60,7 +61,7 @@ private:
     void SwapNode_(size_t i, size_t j);
     
     std::vector<TimerNode> heap_;
-
+    std::mutex mut_;
     std::unordered_map<int, size_t> ref_;
 };
 }

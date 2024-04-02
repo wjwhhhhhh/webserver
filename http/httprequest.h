@@ -3,8 +3,8 @@
 #include<unordered_map>
 #include <unordered_set>
 #include <string>
-#include "../buffer/buffer.h"
-#include "../log/log.h"
+#include "../utility/buffer/buffer.h"
+#include "../utility/log/log.h"
 #include <regex>
 using namespace WebServer::Buffer;
 using std::string;
@@ -43,6 +43,7 @@ namespace WebServer::HTTP
     string&GetBody();
     string&GetMethod();
     string&GetPath();
+    void clear();
     private:
     PARSE_STATE state_;
     std::string method_, path_, version_, body_;
@@ -52,7 +53,7 @@ namespace WebServer::HTTP
     static const std::unordered_map<std::string, int> DEFAULT_HTML_TAG;
     static int ConverHex(char ch);
     };
-    
+
     
 }
 #endif
