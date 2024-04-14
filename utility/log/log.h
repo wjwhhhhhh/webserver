@@ -5,8 +5,8 @@
 #ifndef WEBSERVER_LOG_H
 #define WEBSERVER_LOG_H
 
-#include "../buffer/buffer.h"
 #include "blockqueue.hpp"
+#include "AtomicQueue.h"
 #include <fstream>
 #include <memory>
 #include <mutex>
@@ -15,6 +15,7 @@
 #include <sys/types.h>
 #include <thread>
 #include <unordered_map>
+#define ATOMIC_QUEUE_
 namespace WebServer::Log
 {
 class log
@@ -33,6 +34,12 @@ class log
     static void SetAsync(bool temp);
 
   private:
+#ifdef  ATOMIC_QUEUE_
+WebServer::Atomic::AtomicQueue deque;
+#else
+    WebServer::BlockQueue::BlockQueue<std::string> deque;
+#endif
+    int start;
     void AsyncWrite();
     void flush();
     static std::string GetTime();
@@ -43,10 +50,9 @@ class log
     const int MaxLine = 5000;
     int line;
     static bool is_async_;
-    WebServer::Buffer::Buffer buffer;
     std::fstream file;
     std::mutex Mutex, read_mutex_;
-    WebServer::BlockQueue::BlockQueue<std::string> deque;
+
     std::unordered_map<int, std::string> GetLevel;
     std::unique_ptr<std::thread> WriterThread;
 };

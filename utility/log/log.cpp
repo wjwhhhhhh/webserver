@@ -18,21 +18,20 @@ void WebServer::Log::log::Write(int level, const char *name, int line, const cha
     std::string te;
     {
         std::lock_guard<std::mutex> lock_(read_mutex_);
-        buffer.append(GetLevel[level]);
-        buffer.append(" ");
-        buffer.append(name);
-        buffer.append(" ");
-        buffer.append(move(std::to_string(line)));
-        buffer.append(" ");
-        buffer.append(log::GetTime());
-        buffer.append(" ");
+        te += GetLevel[level];
+        te += " ";
+        te += name;
+        te += " ";
+        te += move(std::to_string(line));
+        te += " ";
+        te += move(log::GetTime());
+        te += " ";
         char temp[1024];
         va_list args;
         va_start(args, format);
         int m = vsnprintf(temp, 1024, format, args); //
         va_end(args);
-        buffer.append(temp);
-        te = buffer.GetString();
+        te += temp;
     }
     if (is_async_)
     {
@@ -51,6 +50,7 @@ void WebServer::Log::log::Write(int level, const char *name, int line, const cha
 
 WebServer::Log::log::log()
 {
+    start = clock();
     GetLevel[0] = "DEBUG";
     GetLevel[1] = "INFO";
     GetLevel[2] = "WARN";
@@ -125,6 +125,7 @@ WebServer::Log::log::~log()
         deque.close();
         WriterThread->join();
     }
+    cout << clock() - start << endl;
 }
 
 void WebServer::Log::log::FlushLogThread()
